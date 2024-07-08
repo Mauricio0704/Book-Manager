@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="page-container">
+      <!-- Search for a book using Google Books API form -->
+      <div id="search-book-api">
+        <div id="search-book">
+          <img src="lupa.png">
+          <input type="search" id="search-book-input" placeholder="Search a book here">
+          <button type="button" id="close-search"><img src="cerrar.png"></button>
+          <button type="button" onclick="showForm()" id="manual">Enter book manually</button>
+        </div>
+      </div>
+      <div id="search-results" class="hidden"></div>
+
+      <!-- Manual Form -->
+      <form id="book-form" class="hidden">
+        <button type="button" id="close-form-btn" class="close-btn"><img src="cerrar.png"></button>
+        <br>
+        <label for="book-title">Title: </label>
+        <input type="text" id="book-title" required>
+        <label for="book-author">Autor: </label>
+        <input type="text" id="book-author" required>
+        <label for="book-image">Cover: </label>
+        <input type="text" id="book-image" placeholder="Optional URL">
+        <span>Status: </span>
+        <select id="book-status"> 
+          <option>Read</option>
+          <option>Reading</option>
+          <option>To read</option>
+        </select>
+        <button type="submit" id="confirm-book">Add book</button>
+      </form>
+      
+      <!-- Space to show the books added -->
+      <div id="mybooks">
+        <header>
+          <img src="/books/79765212.jpg" width="100%">
+        </header>
+        <div id="options">
+          <div>
+            <span class="status-options">Order by: </span>
+            <select id="order-by">
+              <option>Title</option>
+              <option>Author</option>
+            </select>
+          </div>
+          <div class="status-options">
+            <span>Show only: </span>
+            <label><input id="status-read" name="state" type="checkbox" checked>Read</label>
+            <label><input id="status-reading" name="state" type="checkbox" checked>Reading</label>
+            <label><input id="status-to-read" name="state" type="checkbox" checked>To read</label>
+          </div>
+        </div>
+        <div id="bookshelf"></div>
+      </div>
+    </div>
+    <footer>
+      <ul>
+        <li>Image by <a href="https://www.freepik.com/free-vector/hand-drawn-book-club-facebook-post-template_32616173.htm#query=book%20banner&position=18&from_view=keyword&track=ais_user&uuid=65a31153-6529-4010-a117-130e443d27bb">Freepik</a>
+        <li><a href="https://www.flaticon.es/iconos-gratis/cerca" title="cerca iconos">Cerca iconos creados por Pixel perfect - Flaticon</a>
+        <li><a href="https://www.flaticon.es/iconos-gratis/buscar" title="buscar iconos">Buscar iconos creados por Dimitry Miroliubov - Flaticon</a>
+      </ul>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
